@@ -1,9 +1,9 @@
-<div class="contExperiencia row container-fluid">
+<div class="contExperiencia row"  *ngIf="expe">
   <div class="col-12">
-    <h1>Experiencia y Proyectos</h1>
+    <h1>Experiencia</h1>
   </div>
-  <div class="row" *ngIf="isLogged && !isEdit">
-    <div class="col-10 mx-auto">
+  <div class="col-10 mx-auto" *ngIf="isLogged && !isEdit">
+    <div class="">
       <form (ngSubmit)="onCreate()" novalidate #f="ngForm" class="row">
         <div class="form-group">
           <label for="nombreE">Experiencia Laboral Nombre</label>
@@ -23,8 +23,8 @@
       </form>
     </div>
   </div>
-  <div class="row" *ngIf="isLogged && isEdit">
-    <div class="col-10 mx-auto">
+  <div class="col-10 mx-auto" *ngIf="isLogged && isEdit">
+    <div class="">
       <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="row">
         <div class="form-group">
           <label for="nombreE">Experiencia Laboral Nombre</label>
@@ -55,7 +55,7 @@
             {{Experiencia.nombreE}}
           </button>
         </h2>
-        <div [id]="Experiencia.nombreE" class="accordion-collapse collapse show" data-bs-parent="#contExperiencia">
+        <div [id]="Experiencia.nombreE" class="accordion-collapse collapse" data-bs-parent="#contExperiencia">
           <div class="accordion-body row"><strong>{{Experiencia.fechaE}}</strong>
             {{Experiencia.descripcionE}}<br>
             <div class="botones">

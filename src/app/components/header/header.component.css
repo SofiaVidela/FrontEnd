@@ -1,5 +1,5 @@
 #logoAP{
-    padding-left: 5%;
+    padding-left: 25%;
     width: 100px;
 }
 
@@ -24,4 +24,40 @@ button>svg{
 }
 ul{
     margin-bottom: 0;
+}
+/*      boton hamburgesa    */
+.hamburger{
+    display: none;   
+    padding-right: 5%;
+}
+.hamburger svg{
+    color: white;
+}
+.hamburger svg:hover{
+    transition: 0.3s;
+    color: #49562a ;
+    scale: 140%;
+    cursor: pointer;
+}
+.hamburgerOpen{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.hamburgerOpen>ul{
+    width: 100%;
+    display: grid;
+    align-content: space-evenly;
+    align-items: baseline;
+    justify-content: space-around;
+    padding-bottom: 5%;
+}
+
+@media(max-width:550px){
+    .social{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
 }

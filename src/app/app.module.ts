@@ -18,6 +18,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-service';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { interceptorProvider } from './service/interceptor-service';
     AppRoutingModule,
     HttpClientModule,
     /*Graficos Circulares*/
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [
     interceptorProvider

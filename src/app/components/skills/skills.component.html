@@ -1,7 +1,7 @@
-<div class="row contSkills container-fluid">
+<div class="row contSkills" >
     <h1>Habilidades</h1>
     <!-- Boton y formulario de Edicion-->
-    <div class="row col-11 mx-auto">
+    <div class="row col-10 mx-auto">
         <button *ngIf="isLogged" class="btn btn-outline-dark m-1 col-11" (click)="editarDescriP()" type="button"
             data-bs-toggle="collapse" data-bs-target="#DescriPciones" aria-expanded="false"
             aria-controls="DescriPciones">Editar Descripciones de Habilidades
@@ -36,10 +36,10 @@
     <div class="col-11 card mx-auto my-3">
         <div class="card-body">
             <h5 class="card-title">Habilidades Duras</h5>
-            <p class="card-text">{{Persona.descriPcionHS}}</p>
+            <p >{{Persona.descriPcionHS}}</p>
             <hr>
             <h5 class="card-title">Habilidades Blandas</h5>
-            <p class="card-text">
+            <p >
                 {{Persona.descriPcionSS}}
             </p>
         </div>
@@ -47,7 +47,10 @@
     <!-- Graficos-->
     <div class="col-11 card mx-auto my-3">
         <div class="card-body">
-            <h5 class="card-title">Porcentajes de Habilidades</h5>
+            <h5 class="card-title">  <button class="btn  btn-outline-dark m-1 col-11" type="button" data-bs-toggle="collapse" data-bs-target="#Porcentajes" aria-expanded="false" aria-controls="Porcentajes">
+               Mostrar Porcentajes de Habilidades
+              </button></h5>
+            
             <!-- Boton y formulario de Edicion-->
             <div class="row col-11 mx-auto">
                 <button *ngIf="isLogged" class="btn btn-outline-dark m-1 col-11" type="button" data-bs-toggle="collapse"
@@ -109,10 +112,10 @@
                 </div>
             </div>            
             <hr>
-            <div class="row ">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center" *ngFor="let hSArray of hSArray">
-                    <circle-progress [percent]="(hSArray.porcentajeHS)" [radius]="90" [title]="hSArray.nombreHS"
-                        [showTitle]="true" [showUnits]="false" [titleFontSize]="'1em'" [outerStrokeWidth]="16"
+            <div class="row " id="Porcentajes">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mx-auto" *ngFor="let hSArray of hSArray">
+                    <circle-progress [percent]="(hSArray.porcentajeHS)" [radius]="77" [title]="hSArray.nombreHS"
+                        [showTitle]="true" [showUnits]="false" [titleFontSize]="'0.7em'" [outerStrokeWidth]="16"
                         [innerStrokeWidth]="16" [space]="-16" [outerStrokeColor]="'#0a6a77'"
                         [innerStrokeColor]="'#e1e6c6'" [animation]="true" [animationDuration]="900"></circle-progress>
                         <div class="botones">

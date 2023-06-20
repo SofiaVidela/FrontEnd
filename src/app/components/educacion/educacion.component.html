@@ -1,9 +1,9 @@
-<div class="contEducacion row container-fluid">
+<div class="contEducacion row">
     <div class="col-12">
         <h1>Educacion y Cursos</h1>
     </div>
-    <div class="row" *ngIf="isLogged && !isEdit">
-      <div class="col-10 mx-auto">
+    <div class="col-10 mx-auto" *ngIf="isLogged && !isEdit">
+      <div class="">
         <form (ngSubmit)="onCreate()" novalidate #f="ngForm" class="row">
           <div class="form-group">
             <label for="nombreEdu">Curso o Educacion </label>
@@ -23,8 +23,8 @@
         </form>
       </div>
     </div>
-    <div class="row" *ngIf="isLogged && isEdit">
-      <div class="col-10 mx-auto">
+    <div class="col-10 mx-auto" *ngIf="isLogged && isEdit">
+      <div class="">
         <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="row">
           <div class="form-group">
             <label for="nombreEdu">Educación Título</label>
@@ -48,17 +48,17 @@
     </div>
     <div class="col-10 mx-auto">
       <div class="accordion" id="contEducacion">
-        <div class="accordion-item" *ngFor="let Educacion of eduArray">
+        <div class="accordion-item" *ngFor="let Educacion of eduArray" >
           <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+Educacion.nombreEdu"
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+ Educacion.nombreEdu"
               aria-expanded="true" [attr.aria-controls]="Educacion.nombreEdu">
-              {{Educacion.nombreEdu}}
+              {{Educacion.nombreEdu}} <br> {{Educacion.fechaEdu}}
             </button>
           </h2>
-          <div [id]="Educacion.nombreEdu" class="accordion-collapse collapse show" data-bs-parent="#contEducacion">
-            <div class="accordion-body row"><strong>{{Educacion.fechaEdu}}</strong>
+          <div  class="accordion-collapse collapse show" [id]="Educacion.nombreEdu" data-bs-parent="#contEducacion">
+            <div class="accordion-body row">
               {{Educacion.descripcionEdu}}<br>
-              <div class="botones">
+              <div class="botones ">
                  <button *ngIf="isLogged" class="btn btn-danger btn-sm m-2"
                   (click)="delete(Educacion.id)">Borrar
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"

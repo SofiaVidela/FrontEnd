@@ -1,9 +1,10 @@
-<div class="contProyectos row container-fluid">
+<div class="contProyectos row">
   <div class="col-12">
     <h1>Proyectos y Prácticas</h1>
+    <h5>En mi <a href="https://github.com/SofiaVidela" target="_blank" >Git hub</a> tendrás acceso a cada uno de estos proyectos y algunos otros</h5>
   </div>
-  <div class="row" *ngIf="isLogged && !isEdit">
-    <div class="col-10 mx-auto">
+  <div class="col-10 mx-auto" *ngIf="isLogged && !isEdit">
+    <div class="">
       <form (ngSubmit)="onCreate()" novalidate #f="ngForm" class="row">
         <div class="form-group">
           <label for="nombreP">Proyecto </label>
@@ -23,8 +24,8 @@
       </form>
     </div>
   </div>
-  <div class="row" *ngIf="isLogged && isEdit">
-    <div class="col-10 mx-auto">
+  <div class="col-10 mx-auto" *ngIf="isLogged && isEdit">
+    <div class="">
       <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="row">
         <div class="form-group">
           <label for="nombreP">Proyecto</label>
